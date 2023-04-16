@@ -22,6 +22,6 @@ public class MemberDTO {
 	private String address;
 	private String hp;
 	private Date regDate;
-	private String hppp;
+	private String hpppddddd;
 	
 }
