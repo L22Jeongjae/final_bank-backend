@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+     
+    <!-- namespace="패키지명.인터페이스" -->
+<mapper namespace="com.example.react.dao.MemberMapper">
+
+	<select id="memberList" resultType="com.example.react.dto.MemberDTO">
+		SELECT * FROM mvc_customer_tbl
+	</select>
+	
+	 <insert id="insertMember" parameterType="com.example.react.dto.MemberDTO">
+		INSERT INTO mvc_customer_tbl(id, password, name , birthday , email , address , hp, regDate)
+ 		values(#{id}, #{password}, #{name}, #{birthday},#{email}, #{address},#{hp},#{sysdate})
+	</insert>
+	
+	<!-- <update id="updateMember" parameterType="com.example.react.dto.MemberDTO">
+		UPDATE MVC_MEMBER_TBL
+		   SET password = #{password}, username = #{username}, age = #{age}, 
+		   	   email = #{email}, address = #{address}, salary = #{salary}
+		 WHERE id = #{id}
+	</update>
+	
+	<delete id="deleteMember" parameterType="int">
+		DELETE MVC_MEMBER_TBL
+		 WHERE id = #{id}
+	</delete>
+	
+	<select id="findById" resultType="com.example.react.dto.MemberDTO" parameterType="int" >
+		SELECT * FROM MVC_MEMBER_TBL
+		 WHERE id = #{id}
+	</select>
+ -->
+</mapper>
